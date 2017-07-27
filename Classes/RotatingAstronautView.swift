@@ -30,34 +30,40 @@ class RotatingAstronautView: UIView
     
     public func startAnimating()
     {
-        let layer = self.astronautView!.layer;
-        
-        if (layer.speed == 0)
+        if (self.astronautView != nil)
         {
-            // Resume
+            let layer = self.astronautView!.layer;
             
-            let timeOffset = layer.timeOffset;
-            
-            layer.speed = 1.0;
-            layer.timeOffset = 0.0;
-            layer.beginTime = 0.0;
-            
-            layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil) - timeOffset;
+            if (layer.speed == 0)
+            {
+                // Resume
+                
+                let timeOffset = layer.timeOffset;
+                
+                layer.speed = 1.0;
+                layer.timeOffset = 0.0;
+                layer.beginTime = 0.0;
+                
+                layer.beginTime = layer.convertTime(CACurrentMediaTime(), from: nil) - timeOffset;
+            }
         }
     }
     
     public func stopAnimating()
     {
-        let layer = self.astronautView!.layer;
-        
-        if (layer.speed != 0)
+        if (self.astronautView != nil)
         {
-            // Pause
+            let layer = self.astronautView!.layer;
             
-            let timeOffset = layer.convertTime(CACurrentMediaTime(), from: nil);
-        
-            layer.speed = 0.0;
-            layer.timeOffset = timeOffset;
+            if (layer.speed != 0)
+            {
+                // Pause
+                
+                let timeOffset = layer.convertTime(CACurrentMediaTime(), from: nil);
+            
+                layer.speed = 0.0;
+                layer.timeOffset = timeOffset;
+            }
         }
     }
     
