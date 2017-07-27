@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TunnelBearAstronaut" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ld-Oc-rWU" customClass="RotatingAstronautView" customModule="TunnelBearAstronaut" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-AW-Blf" userLabel="Earth Image View">
+                                        <rect key="frame" x="72" y="72" width="96" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="JNA-pN-YHB"/>
+                                            <constraint firstAttribute="height" constant="96" id="XUj-sP-gwT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bear" translatesAutoresizingMaskIntoConstraints="NO" id="KL4-Rb-zfN" userLabel="Bear Image View">
+                                        <rect key="frame" x="184" y="96" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="O5z-vK-Sgu"/>
+                                    <constraint firstAttribute="height" constant="240" id="mRA-8O-UuP"/>
+                                    <constraint firstItem="gcd-AW-Blf" firstAttribute="centerX" secondItem="1Ld-Oc-rWU" secondAttribute="centerX" id="mpV-M0-FmQ"/>
+                                    <constraint firstItem="gcd-AW-Blf" firstAttribute="centerY" secondItem="1Ld-Oc-rWU" secondAttribute="centerY" id="sND-mx-9U2"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="astronautView" destination="KL4-Rb-zfN" id="DTQ-t1-57l"/>
+                                    <outlet property="earthView" destination="gcd-AW-Blf" id="441-Wf-ojw"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-mf-3Wv">
+                                <rect key="frame" x="16" y="603" width="80" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4AI-6E-t9l"/>
+                                    <constraint firstAttribute="width" constant="80" id="4B3-CC-ezU"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimating" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNF-eK-Kse"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL1-CN-QtF">
+                                <rect key="frame" x="279" y="603" width="80" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="lfa-6v-hHV"/>
+                                    <constraint firstAttribute="height" constant="44" id="u6s-Jf-Mui"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAnimating" destination="BYZ-38-t0r" eventType="touchUpInside" id="zey-zI-3OR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xL1-CN-QtF" firstAttribute="centerY" secondItem="CGj-mf-3Wv" secondAttribute="centerY" id="4Ht-zP-hg4"/>
+                            <constraint firstItem="1Ld-Oc-rWU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7KD-b8-ipX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CGj-mf-3Wv" secondAttribute="bottom" constant="20" id="IQY-vp-HcT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CGj-mf-3Wv" secondAttribute="leading" id="Mbg-6E-02J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xL1-CN-QtF" secondAttribute="trailing" id="YoT-Gj-nsh"/>
+                            <constraint firstItem="1Ld-Oc-rWU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="q5U-0v-j9g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rotatingAstronautView" destination="1Ld-Oc-rWU" id="4Iz-Of-0Sf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114.375" y="122.53521126760563"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bear" width="300" height="300"/>
+        <image name="earth" width="256" height="256"/>
+    </resources>
+</document>
